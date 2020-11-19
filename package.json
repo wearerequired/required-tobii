@@ -34,6 +34,6 @@
     "terser-webpack-plugin": "4.2.3"
   },
   "dependencies": {
-    "tobii": "github:wearerequired/tobii#feature/caption-text-callback"
+    "tobii": "github:midzer/tobii#94c056e910bd510c66519ce698769a5829b9448e"
   }
 }
