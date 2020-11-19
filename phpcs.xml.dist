@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="Plugin Name">
-	<description>Coding Standard for the "Plugin Name" plugin.</description>
+<ruleset name="required Tobii">
+	<description>Coding Standard for the "required Tobii" plugin.</description>
 
 	<file>.</file>
 
@@ -9,7 +9,7 @@
 	<rule ref="WordPress.WP.I18n">
 		<properties>
 			<property name="text_domain" type="array">
-				<element value="plugin-name"/>
+				<element value="required-tobii"/>
 			</property>
 		</properties>
 	</rule>
@@ -17,8 +17,8 @@
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
 			<property name="prefixes" type="array">
-				<element value="Required\PluginName"/>
-				<element value="plugin_name"/>
+				<element value="Required\Tobii"/>
+				<element value="required_tobii"/>
 			</property>
 		</properties>
 	</rule>

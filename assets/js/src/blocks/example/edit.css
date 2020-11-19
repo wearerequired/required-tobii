@@ -1,9 +1,0 @@
-:root {
-	--color-brand: #cb1b14;
-	--color-copy: #161616;
-}
-
-.wp-block-wearerequired-example {
-	background-color: var( --color-brand );
-	color: var( --color-copy );
-}

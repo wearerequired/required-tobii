@@ -3,10 +3,10 @@
  * Blocks namespaced functions.
  */
 
-namespace Required\PluginName\Blocks;
+namespace Required\Tobii\Blocks;
 
-use const Required\PluginName\PLUGIN_DIR;
-use const Required\PluginName\PLUGIN_FILE;
+use const Required\Tobii\PLUGIN_DIR;
+use const Required\Tobii\PLUGIN_FILE;
 
 /**
  * Inits plugin.
@@ -23,24 +23,24 @@ function register_assets() {
 	$blocks_script_asset = require PLUGIN_DIR . '/assets/js/dist/blocks.asset.php';
 
 	wp_register_script(
-		'plugin-name-blocks-editor',
+		'required-tobii-blocks-editor',
 		plugins_url( 'assets/js/dist/blocks.js', PLUGIN_FILE ),
 		$blocks_script_asset['dependencies'],
 		$blocks_script_asset['version'],
 		true
 	);
 
-	wp_set_script_translations( 'plugin-name-blocks-editor', 'plugin-name' );
+	wp_set_script_translations( 'required-tobii-blocks-editor', 'required-tobii' );
 
 	wp_register_style(
-		'plugin-name-blocks-editor',
+		'required-tobii-blocks-editor',
 		plugins_url( 'assets/js/dist/blocks.css', PLUGIN_FILE ),
 		[],
 		filemtime( PLUGIN_DIR . '/assets/js/dist/blocks.css' )
 	);
 
 	wp_register_style(
-		'plugin-name-blocks-style',
+		'required-tobii-blocks-style',
 		plugins_url( 'assets/js/dist/style-blocks.css', PLUGIN_FILE ),
 		[],
 		filemtime( PLUGIN_DIR . '/assets/js/dist/style-blocks.css' )
@@ -51,12 +51,4 @@ function register_assets() {
  * Registers block types
  */
 function register_block_types() {
-	register_block_type(
-		'wearerequired/example',
-		[
-			'editor_script' => 'plugin-name-blocks-editor',
-			'editor_style'  => 'plugin-name-blocks-editor',
-			'style'         => 'plugin-name-blocks-style',
-		]
-	);
 }

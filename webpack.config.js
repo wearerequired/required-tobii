@@ -34,6 +34,6 @@ module.exports = {
 	output: {
 		path: path.resolve( __dirname, 'assets/js/dist' ),
 		filename: '[name].js',
-		jsonpFunction: 'pluginNameWebpackJsonp',
+		jsonpFunction: 'requiredTobiiWebpackJsonp',
 	},
 };

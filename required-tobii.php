@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Plugin Name
- * Plugin URI:  https://github.com/wearerequired/plugin-name
- * Description: Plugin description.
+ * Plugin Name: required Tobii
+ * Plugin URI:  https://github.com/wearerequired/required-tobii
+ * Description: An accessible, open-source lightbox for WordPress.
  * Version:     0.1.0
  * Author:      required
  * Author URI:  https://required.com
@@ -26,7 +26,7 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-namespace Required\PluginName;
+namespace Required\Tobii;
 
 if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 	require __DIR__ . '/vendor/autoload.php';

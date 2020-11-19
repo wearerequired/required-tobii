@@ -1,7 +1,7 @@
 {
-  "name": "wearerequired/plugin-name",
+  "name": "wearerequired/required-tobii",
   "type": "wordpress-plugin",
-  "description": "Plugin description.",
+  "description": "An accessible, open-source lightbox for WordPress.",
   "license": "GPL-2.0-or-later",
   "authors": [
     {
@@ -26,7 +26,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Required\\PluginName\\": "inc"
+      "Required\\Tobii\\": "inc"
     },
     "files": [
       "inc/namespace.php",

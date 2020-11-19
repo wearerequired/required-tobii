@@ -3,7 +3,7 @@
  * Namespaced functions.
  */
 
-namespace Required\PluginName;
+namespace Required\Tobii;
 
 use function Required\Traduttore_Registry\add_project;
 
@@ -22,7 +22,7 @@ function bootstrap(): void {
 function register_translations_project() {
 	add_project(
 		'plugin',
-		'plugin-name',
-		'https://translate.required.com/api/translations/plugin-name/'
+		'required-tobii',
+		'https://translate.required.com/api/translations/required-tobii/'
 	);
 }
