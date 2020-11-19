@@ -1,6 +1,14 @@
 @import "~tobii/src/scss/tobii.scss";
 
-.tobii-zoom__icon {
-	top: 0;
-	bottom: auto;
+.tobii {
+	z-index: 100000; // #wpadminbar uses 99999
+}
+
+.tobii__btn {
+	border-radius: 3px;
+	outline: none;
+
+	&:focus {
+		box-shadow: 0 0 0 1px var( --button-color );
+	}
 }
