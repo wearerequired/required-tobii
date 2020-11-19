@@ -1,5 +1,9 @@
 @import "~tobii/src/scss/tobii.scss";
 
+:root {
+	--lightbox-background: rgba( 0, 0, 0, .8 );
+}
+
 .tobii {
 	z-index: 100000; // #wpadminbar uses 99999
 }
