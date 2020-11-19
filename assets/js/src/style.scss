@@ -7,6 +7,7 @@
 .tobii__btn {
 	border-radius: 3px;
 	outline: none;
+	border: none;
 
 	&:focus {
 		box-shadow: 0 0 0 1px var( --button-color );
