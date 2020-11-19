@@ -26,9 +26,7 @@ module.exports = {
 	context: path.resolve( __dirname, 'assets/js/src' ),
 
 	// https://webpack.js.org/configuration/entry-context/#entry
-	entry: {
-		blocks: './blocks.js',
-	},
+	entry: {},
 
 	// https://webpack.js.org/configuration/output/
 	output: {

@@ -12,8 +12,6 @@ use function Required\Traduttore_Registry\add_project;
  */
 function bootstrap(): void {
 	add_action( 'init', __NAMESPACE__ . '\register_translations_project' );
-
-	Blocks\bootstrap();
 }
 
 /**

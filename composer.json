@@ -29,8 +29,7 @@
       "Required\\Tobii\\": "inc"
     },
     "files": [
-      "inc/namespace.php",
-      "inc/Blocks/namespace.php"
+      "inc/namespace.php"
     ]
   },
   "minimum-stability": "dev",
