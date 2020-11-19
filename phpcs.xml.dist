@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<ruleset name="Plugin Name">
+	<description>Coding Standard for the "Plugin Name" plugin.</description>
+
+	<file>.</file>
+
+	<rule ref="Required"/>
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="plugin-name"/>
+			</property>
+		</properties>
+	</rule>
+
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="Required\PluginName"/>
+				<element value="plugin_name"/>
+			</property>
+		</properties>
+	</rule>
+
+	<rule ref="SlevomatCodingStandard.Commenting.ForbiddenAnnotations">
+		<properties>
+			<property name="forbiddenAnnotations" type="array" extend="true">
+				<element value="@since"/>
+			</property>
+		</properties>
+	</rule>
+
+	<exclude-pattern>/assets/*</exclude-pattern>
+</ruleset>

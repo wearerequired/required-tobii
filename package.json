@@ -1,0 +1,36 @@
+{
+  "name": "@wearerequired/plugin-name",
+  "version": "0.1.0",
+  "description": "Plugin description.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "lint-js": "wp-scripts lint-js",
+    "lint-js:fix": "wp-scripts lint-js --fix",
+    "lint-css": "wp-scripts lint-style",
+    "lint-css:fix": "wp-scripts lint-style --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wearerequired/wordpress-plugin-boilerplate.git"
+  },
+  "author": "required gmbh",
+  "license": "GPL-2.0-or-later",
+  "bugs": {
+    "url": "https://github.com/wearerequired/wordpress-plugin-boilerplate/issues"
+  },
+  "homepage": "https://github.com/wearerequired/wordpress-plugin-boilerplate#readme",
+  "devDependencies": {
+    "@wearerequired/browserslist-config": "0.1.0",
+    "@wearerequired/eslint-config": "1.5.1",
+    "@wearerequired/postcss-config": "0.1.1",
+    "@wearerequired/stylelint-config": "1.5.1",
+    "@wordpress/eslint-plugin": "7.3.0",
+    "@wordpress/scripts": "12.5.0",
+    "eslint": "7.13.0",
+    "stylelint": "13.8.0",
+    "stylelint-config-wordpress": "17.0.0",
+    "terser-webpack-plugin": "4.2.3"
+  }
+}

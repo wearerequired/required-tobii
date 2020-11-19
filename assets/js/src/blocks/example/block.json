@@ -1,0 +1,10 @@
+{
+  "name": "wearerequired/example",
+  "category": "layout",
+  "supports": {
+    "customClassName": false,
+    "html": false
+  },
+  "attributes": {
+  }
+}

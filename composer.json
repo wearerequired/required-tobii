@@ -1,0 +1,42 @@
+{
+  "name": "wearerequired/plugin-name",
+  "type": "wordpress-plugin",
+  "description": "Plugin description.",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "required",
+      "email": "info@required.ch",
+      "homepage": "https://required.com",
+      "role": "Company"
+    }
+  ],
+  "require": {
+    "php": ">=7.2",
+    "wearerequired/traduttore-registry": "^2.0"
+  },
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2 || ^0.7",
+    "wearerequired/coding-standards": "^1.0"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Required\\PluginName\\": "inc"
+    },
+    "files": [
+      "inc/namespace.php",
+      "inc/Blocks/namespace.php"
+    ]
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "format": "vendor/bin/phpcbf --report-summary --report-source .",
+    "lint": "vendor/bin/phpcs --report-summary --report-source ."
+  }
+}
