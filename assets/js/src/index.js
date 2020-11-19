@@ -4,6 +4,19 @@ import './style.scss';
 
 new Tobii( {
 	selector: '[data-lightbox]',
-	captions: false, // Don't use alt attribute by default.
 	zoom: false, // The zoom icon may be misplayed.
+	captionText: ( element ) => {
+		let sibling = element.nextElementSibling;
+		if ( sibling && sibling.matches( 'figcaption' ) ) {
+			return sibling.textContent;
+		}
+
+		// In classic editor, a gallery image is wrapped in an additional div container.
+		sibling = element.parentNode.nextElementSibling;
+		if ( sibling && sibling.matches( 'figcaption' ) ) {
+			return sibling.textContent;
+		}
+
+		return null;
+	},
 } );
