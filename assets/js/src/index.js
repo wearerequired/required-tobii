@@ -7,13 +7,13 @@ new Tobii( {
 	captionText: ( element ) => {
 		let sibling = element.nextElementSibling;
 		if ( sibling && sibling.matches( 'figcaption' ) ) {
-			return sibling.textContent;
+			return sibling.textContent.trim();
 		}
 
 		// In classic editor, a gallery image is wrapped in an additional div container.
 		sibling = element.parentNode.nextElementSibling;
 		if ( sibling && sibling.matches( 'figcaption' ) ) {
-			return sibling.textContent;
+			return sibling.textContent.trim();
 		}
 
 		return null;
