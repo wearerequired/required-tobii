@@ -42,7 +42,7 @@ function register_translations_project() {
 function register_scripts() {
 	$script_asset = require PLUGIN_DIR . '/assets/js/dist/integration.asset.php';
 
-	wp_enqueue_script(
+	wp_register_script(
 		'required-tobii-integration',
 		plugins_url( 'assets/js/dist/integration.js', PLUGIN_FILE ),
 		$script_asset['dependencies'],
@@ -50,7 +50,7 @@ function register_scripts() {
 		true
 	);
 
-	wp_enqueue_style(
+	wp_register_style(
 		'required-tobii-integration',
 		plugins_url( 'assets/js/dist/style-integration.css', PLUGIN_FILE ),
 		[],
@@ -153,9 +153,9 @@ function enable_lightbox_for_images( $content ) {
 
 	// phpcs:enable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 
-	if ( $lightboxes > 0 ) {
-		wp_enqueue_script( 'required-simplelightbox-integration' );
-		wp_enqueue_style( 'required-simplelightbox-integration' );
+	if ( $lightboxes > 0 && ! wp_script_is( 'wp_enqueue_script' ) ) {
+		wp_enqueue_script( 'required-tobii-integration' );
+		wp_enqueue_style( 'required-tobii-integration' );
 	}
 
 	return $content;
