@@ -31,7 +31,7 @@
     "eslint": "7.13.0",
     "stylelint": "13.8.0",
     "stylelint-config-wordpress": "17.0.0",
-    "terser-webpack-plugin": "4.2.3"
+    "terser-webpack-plugin": "5.0.3"
   },
   "dependencies": {
     "tobii": "github:midzer/tobii#9e192d0337044ebd86e838a1412c6b5b8b5ff2ee"
