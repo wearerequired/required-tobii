@@ -4,7 +4,6 @@ import './style.scss';
 
 new Tobii( {
 	selector: '[data-lightbox]',
-	zoom: false, // The zoom icon may be misplayed.
 	captionText: ( element ) => {
 		let sibling = element.nextElementSibling;
 		if ( sibling && sibling.matches( 'figcaption' ) ) {
@@ -19,4 +18,5 @@ new Tobii( {
 
 		return null;
 	},
+	...window.requiredTobiiOptions,
 } );

@@ -32,7 +32,7 @@ function register_translations_project() {
 	add_project(
 		'plugin',
 		'required-tobii',
-		'https://translate.required.com/api/translations/required-tobii/'
+		'https://translate.required.com/api/translations/required/required-tobii/'
 	);
 }
 
@@ -153,10 +153,44 @@ function enable_lightbox_for_images( $content ) {
 
 	// phpcs:enable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 
-	if ( $lightboxes > 0 && ! wp_script_is( 'wp_enqueue_script' ) ) {
+	if ( $lightboxes > 0 && ! wp_script_is( 'required-tobii-integration' ) ) {
+		wp_add_inline_script(
+			'required-tobii-integration',
+			sprintf(
+				'window.requiredTobiiOptions = %s',
+				json_encode( get_tobii_options() )
+			),
+			'before'
+		);
 		wp_enqueue_script( 'required-tobii-integration' );
 		wp_enqueue_style( 'required-tobii-integration' );
 	}
 
 	return $content;
+}
+
+/**
+ * Options passed to the Tobii instance.
+ *
+ * @link https:// github.com/midzer/tobii#options
+ *
+ * @return array Options passed to the Tobii instance.
+ */
+function get_tobii_options(): array {
+	$options = [
+		'zoom'                  => false,
+		'navLabel'              => [
+			__( 'Previous', 'required-tobii' ),
+			__( 'Next', 'required-tobii' ),
+		],
+		'closeLabel'            => __( 'Close', 'required-tobii' ),
+		'loadingIndicatorLabel' => __( 'Image loading…', 'required-tobii' ),
+	];
+
+	/**
+	 * Filters the options passed to the Tobii instance.
+	 *
+	 * @param array $options Options passed to the Tobii instance.
+	 */
+	return apply_filters( 'required_tobii.options', $options );
 }
