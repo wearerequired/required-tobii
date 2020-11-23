@@ -9,8 +9,16 @@
 	border-radius: 3px;
 	outline: none;
 	border: none;
+	background: none;
+	transition: none;
+	transform: none;
+	box-shadow: none;
 
-	&:focus {
+	&:active,
+	&:focus,
+	&:hover {
+		color: var( --button-color );
 		box-shadow: 0 0 0 1px var( --button-color );
+		transform: none;
 	}
 }
