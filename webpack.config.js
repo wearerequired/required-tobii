@@ -18,6 +18,9 @@ module.exports = {
 					output: {
 						comments: false,
 					},
+					compress: {
+						passes: 2,
+					},
 				},
 			} ),
 		],
