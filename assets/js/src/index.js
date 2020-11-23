@@ -6,13 +6,13 @@ new Tobii( {
 	selector: '[data-lightbox]',
 	captionText: ( element ) => {
 		let sibling = element.nextElementSibling;
-		if ( sibling && sibling.matches( 'figcaption' ) ) {
+		if ( sibling && 'FIGCAPTION' === sibling.tagName ) {
 			return sibling.textContent.trim();
 		}
 
 		// In classic editor, a gallery image is wrapped in an additional div container.
 		sibling = element.parentNode.nextElementSibling;
-		if ( sibling && sibling.matches( 'figcaption' ) ) {
+		if ( sibling && 'FIGCAPTION' === sibling.tagName ) {
 			return sibling.textContent.trim();
 		}
 
