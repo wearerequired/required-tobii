@@ -39,4 +39,15 @@ module.exports = {
 		filename: '[name].js',
 		jsonpFunction: 'requiredTobiiWebpackJsonp',
 	},
+
+	// https://webpack.js.org/configuration/plugins/
+	plugins: [
+		...defaultConfig.plugins.map( ( plugin ) => {
+			if ( plugin.constructor.name === 'DependencyExtractionWebpackPlugin' ) {
+				plugin.options.injectPolyfill = false;
+			}
+
+			return plugin;
+		} ),
+	],
 };
