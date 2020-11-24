@@ -5,6 +5,14 @@
 	--lightbox-z-index: 100000; // #wpadminbar uses 99999
 }
 
+.tobii {
+	font-size: 1rem;
+}
+
+.tobii__counter {
+	font-size: .875rem;
+}
+
 .tobii__btn {
 	border-radius: 3px;
 	outline: none;
@@ -13,6 +21,11 @@
 	transition: none;
 	transform: none;
 	box-shadow: none;
+
+	svg {
+		width: 2.5rem;
+		height: 2.5rem;
+	}
 
 	&:active,
 	&:focus,
