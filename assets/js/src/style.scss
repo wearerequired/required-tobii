@@ -27,11 +27,37 @@
 		height: 2.5rem;
 	}
 
+	@media screen and ( prefers-reduced-motion: no-preference ) {
+		will-change: opacity, color, background-color, box-shadow;
+		transition-property: opacity, color, background-color, box-shadow;
+	}
+
 	&:active,
 	&:focus,
 	&:hover {
 		color: var( --button-color );
-		box-shadow: 0 0 0 1px var( --button-color );
+		box-shadow: 0 0 0 1px rgba( var( --button-color ), .5 );
 		transform: none;
+	}
+
+	&:hover {
+		background-color: rgba( 0, 0, 0, .75 );
+	}
+
+	&:active {
+		transform: translateY( 1px );
+	}
+
+	&--next,
+	&--previous {
+		transform: translateY( -50% );
+
+		&:focus,
+		&:hover {
+			transform: translateY( -50% );
+		}
+		&:active {
+			transform: translateY( calc( -50% + 1px ) );
+		}
 	}
 }
