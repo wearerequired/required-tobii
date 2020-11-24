@@ -1,15 +1,13 @@
 @import "~tobii/src/scss/tobii.scss";
 
 :root {
-	--base-font-size: 16px;
+	--base-font-size: 18px;
 	--lightbox-background: rgba( 0, 0, 0, .8 );
 	--lightbox-z-index: 100000; // #wpadminbar uses 99999
 }
 
 .tobii__counter {
 	font-size: em( 14 );
-	left: em( 16, 14 );
-	top: em( 16, 14 );
 }
 
 .tobii__btn {
@@ -58,6 +56,15 @@
 
 		&:active {
 			transform: translateY( calc( -50% + 1px ) );
+		}
+	}
+}
+
+.tobii__slide {
+	figure {
+		> figcaption {
+			padding: em( 10, 14 ) em( 10, 14 );
+			font-size: em( 14 );
 		}
 	}
 }
