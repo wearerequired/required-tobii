@@ -54,7 +54,7 @@ function register_scripts() {
 		'required-tobii-integration',
 		plugins_url( 'assets/js/dist/style-integration.css', PLUGIN_FILE ),
 		[],
-		$script_asset['version']
+		filemtime( PLUGIN_DIR . '/assets/js/dist/style-integration.css' )
 	);
 }
 
