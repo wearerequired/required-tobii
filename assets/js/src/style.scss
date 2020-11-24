@@ -18,6 +18,7 @@
 	border: none;
 	background: none;
 	transition: none;
+	transform: none;
 	box-shadow: none;
 
 	svg {
@@ -35,6 +36,7 @@
 	&:hover {
 		color: var( --button-color );
 		box-shadow: 0 0 0 1px rgba( 255, 255, 255, .5 );
+		transform: none;
 	}
 
 	&:hover {
@@ -47,6 +49,13 @@
 
 	&--next,
 	&--previous {
+		transform: translateY( -50% );
+
+		&:focus,
+		&:hover {
+			transform: translateY( -50% );
+		}
+
 		&:active {
 			transform: translateY( calc( -50% + 1px ) );
 		}
