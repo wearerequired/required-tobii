@@ -23,7 +23,7 @@
   "homepage": "https://github.com/wearerequired/required-tobii#readme",
   "devDependencies": {
     "@wearerequired/browserslist-config": "0.1.0",
-    "@wearerequired/eslint-config": "1.5.1",
+    "@wearerequired/eslint-config": "1.6.0",
     "@wearerequired/postcss-config": "0.1.1",
     "@wearerequired/stylelint-config": "1.5.1",
     "@wordpress/eslint-plugin": "7.3.0",
