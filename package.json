@@ -29,7 +29,7 @@
     "@wordpress/eslint-plugin": "7.3.0",
     "@wordpress/scripts": "12.5.0",
     "eslint": "7.15.0",
-    "stylelint": "13.8.0",
+    "stylelint": "13.9.0",
     "stylelint-config-wordpress": "17.0.0",
     "terser-webpack-plugin": "4.2.3"
   },
