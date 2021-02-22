@@ -13,7 +13,7 @@
 .tobii__btn {
 	border-radius: 3px;
 	outline: none;
-	border: none;
+	border: 0;
 	background: none;
 	transition: none;
 	transform: none;
@@ -35,6 +35,8 @@
 		color: var( --button-color );
 		box-shadow: 0 0 0 1px rgba( 255, 255, 255, .5 );
 		transform: none;
+		border: 0;
+		background: none;
 	}
 
 	&:hover {
