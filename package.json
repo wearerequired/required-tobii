@@ -34,6 +34,6 @@
     "terser-webpack-plugin": "4.2.3"
   },
   "dependencies": {
-    "tobii": "github:midzer/tobii#9e192d0337044ebd86e838a1412c6b5b8b5ff2ee"
+    "tobii": "github:wearerequired/tobii#microbundle"
   }
 }
