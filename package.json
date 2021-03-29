@@ -28,7 +28,7 @@
     "@wearerequired/stylelint-config": "1.6.0",
     "@wordpress/eslint-plugin": "8.0.2",
     "@wordpress/scripts": "13.0.3",
-    "eslint": "7.20.0",
+    "eslint": "7.23.0",
     "stylelint": "13.11.0",
     "stylelint-config-wordpress": "17.0.0",
     "terser-webpack-plugin": "4.2.3"
