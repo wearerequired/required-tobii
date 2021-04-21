@@ -35,5 +35,33 @@
   },
   "dependencies": {
     "tobii": "github:wearerequired/tobii#microbundle"
+  },
+  "stylelint": {
+    "extends": [
+      "@wearerequired/stylelint-config"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "@wearerequired/eslint-config"
+    ],
+    "rules": {
+      "@wordpress/i18n-text-domain": [
+        "error",
+        {
+          "allowedTextDomain": [
+            "required-tobii"
+          ]
+        }
+      ]
+    }
+  },
+  "browserslist": [
+    "extends @wearerequired/browserslist-config"
+  ],
+  "babel": {
+    "presets": [
+      "@wordpress/babel-preset-default"
+    ]
   }
 }
