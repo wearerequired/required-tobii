@@ -1,6 +1,7 @@
 {
   "name": "@wearerequired/required-tobii",
-  "version": "0.1.0",
+  "version": "0.0.0",
+  "private": true,
   "description": "An accessible, open-source lightbox for WordPress.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -23,15 +24,14 @@
   "homepage": "https://github.com/wearerequired/required-tobii#readme",
   "devDependencies": {
     "@wearerequired/browserslist-config": "0.1.0",
-    "@wearerequired/eslint-config": "1.6.0",
+    "@wearerequired/eslint-config": "2.1.0",
     "@wearerequired/postcss-config": "0.1.2",
-    "@wearerequired/stylelint-config": "1.6.0",
-    "@wordpress/eslint-plugin": "8.0.2",
-    "@wordpress/scripts": "13.0.3",
-    "eslint": "7.20.0",
-    "stylelint": "13.11.0",
-    "stylelint-config-wordpress": "17.0.0",
-    "terser-webpack-plugin": "4.2.3"
+    "@wearerequired/stylelint-config": "2.1.0",
+    "@wordpress/eslint-plugin": "9.0.3",
+    "@wordpress/scripts": "14.1.1",
+    "@wordpress/stylelint-config": "19.0.3",
+    "eslint": "7.24.0",
+    "stylelint": "13.12.0"
   },
   "dependencies": {
     "tobii": "github:wearerequired/tobii#microbundle"
