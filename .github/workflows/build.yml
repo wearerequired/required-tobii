@@ -31,6 +31,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: Authenticate to GitHub Packages
+        run: echo '//npm.pkg.github.com/:_authToken=${{ github.token  }}' >> ${{ github.workspace }}/.npmrc
+
       - name: Install Node.js dependencies
         run: npm i
 
