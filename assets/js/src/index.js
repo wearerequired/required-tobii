@@ -1,4 +1,4 @@
-import Tobii from 'tobii';
+import Tobii from '@midzer/tobii';
 
 import './style.scss';
 
