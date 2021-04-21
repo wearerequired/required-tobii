@@ -1,0 +1,66 @@
+name: Coding Standards
+
+on:
+  # Checks are required to pass for each PR so we cannot disable them for documentation-only changes.
+  pull_request_target:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  check:
+    name: Set up and run linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository (push)
+        if: ${{ github.event_name == 'push' }}
+        uses: actions/checkout@v2
+
+      - name: Check out repository (pull_request_target)
+        if: ${{ github.event_name == 'pull_request_target' }}
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Cache Node.js dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install Node.js dependencies
+        run: npm i
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "7.4"
+          coverage: none
+          tools: composer
+
+      - name: Install PHP dependencies
+        uses: ramsey/composer-install@v1
+
+      - name: Make Composer packages available globally
+        run: echo "${PWD}/vendor/bin" >> $GITHUB_PATH
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v1
+        with:
+          continue_on_error: false
+          eslint: true
+          stylelint: true
+          stylelint_args: "--allow-empty-input"
+          php_codesniffer: true

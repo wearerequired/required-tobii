@@ -1,0 +1,44 @@
+name: Build
+
+on:
+  pull_request_target:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build and commit updated assets
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+        with:
+          # Custom token to allow commits trigger other workflows.
+          token: ${{ secrets.REQUIRED_COM_REPO_ACCESS_PAT }}
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Cache Node.js dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install Node.js dependencies
+        run: npm i
+
+      - name: Run build command
+        run: npm run build
+
+      - name: Commit updated assets files
+        uses: EndBug/add-and-commit@v7
+        with:
+          message: "[auto] Update assets"
+          add: "assets"

@@ -1,0 +1,19 @@
+name: Auto-merge
+
+on:
+  pull_request_target:
+    branches:
+      - master
+
+jobs:
+  auto-merge:
+    name: Check and enable auto-merge
+    if: ${{ github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Enable auto-merge for dependency update
+        uses: wearerequired/auto-merge-dependency-update-action@v1
+        with:
+          github-token: ${{ secrets.REQUIRED_COM_REPO_ACCESS_PAT }}
+          allowed-update-types: 'devDependencies:minor, devDependencies:patch, dependencies:patch'

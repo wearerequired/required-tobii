@@ -1,0 +1,22 @@
+# Used by Probot Settings: https://probot.github.io/apps/settings/
+_extends: probot-settings
+
+repository:
+  delete_branch_on_merge: true
+
+branches:
+  - name: master
+    protection:
+      # Don't require reviews.
+      required_pull_request_reviews: null
+      required_status_checks:
+        # Require branches to be up to date before merging.
+        strict: true
+        # Required. The list of status checks to require in order to merge into this branch
+        contexts: [ 'Set up and run linters', 'ESLint', 'PHP_CodeSniffer', 'stylelint', 'Build and commit updated assets' ]
+      # Don't enforce restrictions for administrators.
+      enforce_admins: null
+      # Prevent merge commits from being pushed.
+      required_linear_history: true
+      # Allow anyone to push to the branch.
+      restrictions: null
