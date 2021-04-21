@@ -12,25 +12,22 @@
     }
   ],
   "require": {
-    "php": ">=7.2",
+    "php": ">=7.4",
     "wearerequired/traduttore-registry": "^2.0"
   },
   "require-dev": {
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2 || ^0.7",
-    "wearerequired/coding-standards": "^1.0"
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+    "wearerequired/coding-standards": "^2.0"
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "0.1.x-dev"
+      "dev-master": "1.x-dev"
     }
   },
   "autoload": {
     "psr-4": {
       "Required\\Tobii\\": "inc"
-    },
-    "files": [
-      "inc/namespace.php"
-    ]
+    }
   },
   "minimum-stability": "dev",
   "prefer-stable": true,

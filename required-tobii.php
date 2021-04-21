@@ -3,13 +3,13 @@
  * Plugin Name: required Tobii
  * Plugin URI:  https://github.com/wearerequired/required-tobii
  * Description: An accessible, open-source lightbox for WordPress.
- * Version:     0.1.0
+ * Version:     1.0.0
  * Author:      required
  * Author URI:  https://required.com
  * License:     GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  *
- * Copyright (c) 2020 required (email: info@required.com)
+ * Copyright (c) 2020-2021 required (email: info@required.com)
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License, version 2 or, at
@@ -34,5 +34,7 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 
 const PLUGIN_DIR  = __DIR__;
 const PLUGIN_FILE = __FILE__;
+
+require_once PLUGIN_DIR . '/inc/namespace.php';
 
 bootstrap();

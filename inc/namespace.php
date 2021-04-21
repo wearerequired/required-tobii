@@ -14,7 +14,6 @@ use function Required\Traduttore_Registry\add_project;
  */
 const SUPPORTED_IMAGE_EXTENSIONS = 'png|jpg|jpeg|gif|webp';
 
-
 /**
  * Inits plugin.
  */
@@ -28,7 +27,7 @@ function bootstrap(): void {
 /**
  * Registers Traduttore  project for translations.
  */
-function register_translations_project() {
+function register_translations_project(): void {
 	add_project(
 		'plugin',
 		'required-tobii',
@@ -39,7 +38,7 @@ function register_translations_project() {
 /**
  * Registers scripts and styles
  */
-function register_scripts() {
+function register_scripts(): void {
 	$script_asset = require PLUGIN_DIR . '/assets/js/dist/integration.asset.php';
 
 	wp_register_script(
@@ -65,7 +64,7 @@ function register_scripts() {
  * @param string $content Post content.
  * @return string Post content.
  */
-function enable_lightbox_for_images( $content ) {
+function enable_lightbox_for_images( string $content ): string {
 	// phpcs:disable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 
 	$document                     = new DOMDocument();
@@ -174,7 +173,7 @@ function enable_lightbox_for_images( $content ) {
  *
  * @link https:// github.com/midzer/tobii#options
  *
- * @return array Options passed to the Tobii instance.
+ * @return array<string,mixed> Options passed to the Tobii instance.
  */
 function get_tobii_options(): array {
 	$options = [
