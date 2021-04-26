@@ -31,7 +31,7 @@
     "@wordpress/scripts": "14.1.1",
     "@wordpress/stylelint-config": "19.0.3",
     "eslint": "7.24.0",
-    "stylelint": "13.12.0"
+    "stylelint": "13.13.0"
   },
   "dependencies": {
     "@midzer/tobii": "2.0.6"
