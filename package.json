@@ -28,7 +28,7 @@
     "@wearerequired/postcss-config": "0.1.2",
     "@wearerequired/stylelint-config": "2.1.0",
     "@wordpress/eslint-plugin": "9.0.3",
-    "@wordpress/scripts": "14.1.1",
+    "@wordpress/scripts": "15.0.1",
     "@wordpress/stylelint-config": "19.0.3",
     "eslint": "7.25.0",
     "stylelint": "13.13.0"
