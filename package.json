@@ -30,7 +30,7 @@
     "@wordpress/eslint-plugin": "9.0.3",
     "@wordpress/scripts": "14.1.1",
     "@wordpress/stylelint-config": "19.0.3",
-    "eslint": "7.25.0",
+    "eslint": "7.26.0",
     "stylelint": "13.13.0"
   },
   "dependencies": {
