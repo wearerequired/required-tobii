@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           # Custom token to allow commits trigger other workflows.
-          token: ${{ secrets.REQUIRED_COM_REPO_ACCESS_PAT }}
+          token: ${{ secrets.PAT_WITH_REPO_SCOPE }}
           ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Set up Node.js
@@ -30,9 +30,6 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-
-      - name: Authenticate to GitHub Packages
-        run: echo '//npm.pkg.github.com/:_authToken=${{ github.token  }}' >> ${{ github.workspace }}/.npmrc
 
       - name: Install Node.js dependencies
         run: npm i
