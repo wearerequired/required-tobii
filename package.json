@@ -23,15 +23,15 @@
   },
   "homepage": "https://github.com/wearerequired/required-tobii#readme",
   "devDependencies": {
-    "@wearerequired/browserslist-config": "0.1.0",
+    "@wearerequired/browserslist-config": "0.2.0",
     "@wearerequired/eslint-config": "2.1.0",
     "@wearerequired/postcss-config": "0.1.2",
     "@wearerequired/stylelint-config": "2.1.0",
-    "@wordpress/eslint-plugin": "9.0.3",
-    "@wordpress/scripts": "14.1.1",
-    "@wordpress/stylelint-config": "19.0.3",
-    "eslint": "7.25.0",
-    "stylelint": "13.13.0"
+    "@wordpress/eslint-plugin": "9.0.5",
+    "@wordpress/scripts": "16.0.0",
+    "@wordpress/stylelint-config": "19.0.4",
+    "eslint": "7.26.0",
+    "stylelint": "13.13.1"
   },
   "dependencies": {
     "@midzer/tobii": "2.1.0"
@@ -61,7 +61,16 @@
   ],
   "babel": {
     "presets": [
-      "@wordpress/babel-preset-default"
+      "@wordpress/babel-preset-default",
+      [
+        "@babel/preset-env",
+        {
+          "include": [
+            "proposal-nullish-coalescing-operator"
+          ],
+          "modules": false
+        }
+      ]
     ]
   }
 }
