@@ -26,7 +26,7 @@
     "@wearerequired/browserslist-config": "0.2.0",
     "@wearerequired/eslint-config": "2.2.0",
     "@wearerequired/postcss-config": "0.1.2",
-    "@wearerequired/stylelint-config": "2.1.0",
+    "@wearerequired/stylelint-config": "2.2.0",
     "@wordpress/eslint-plugin": "9.1.1",
     "@wordpress/scripts": "16.1.4",
     "@wordpress/stylelint-config": "19.1.0",
