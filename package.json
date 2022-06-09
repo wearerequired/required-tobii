@@ -34,7 +34,7 @@
     "stylelint": "13.13.1"
   },
   "dependencies": {
-    "@midzer/tobii": "2.1.0"
+    "@midzer/tobii": "2.4.0"
   },
   "stylelint": {
     "extends": [
