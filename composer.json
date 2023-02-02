@@ -17,7 +17,7 @@
   },
   "require-dev": {
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
-    "wearerequired/coding-standards": "^2.0"
+    "wearerequired/coding-standards": "^5.0"
   },
   "extra": {
     "branch-alias": {
