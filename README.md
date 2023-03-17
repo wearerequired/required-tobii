@@ -14,7 +14,7 @@ The plugin has no settings page.
 
 ## Customize Tobii options
 
-You can pass any [supported option by Tobii](https:// github.com/midzer/tobii#options) through the `required_tobii.options` filter. For example to enable the zoom icons use the following snippet:
+You can pass any [supported option by Tobii](https://github.com/midzer/tobii#options) through the `required_tobii.options` filter. For example to enable the zoom icons use the following snippet:
 
 ```php
 add_filter(
