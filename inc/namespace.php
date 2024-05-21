@@ -74,7 +74,7 @@ function enable_lightbox_for_images( string $content ): string {
 	$libxml_use_internal_errors = libxml_use_internal_errors( true );
 	$document_loaded            = $document->loadHTML(
 		sprintf(
-			'<?xml encoding="utf-8"?>%s',
+			'<?xml encoding="utf-8"?><PreserveSelfClosingTags>%s</PreserveSelfClosingTags>',
 			$content
 		),
 		LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD
@@ -144,8 +144,18 @@ function enable_lightbox_for_images( string $content ): string {
 		$link->setAttribute( 'data-group', $image_id );
 	}
 
-	// Strip the XML tag as it's only used for the internal encoding.
-	$document_html = trim( str_replace( '<?xml encoding="utf-8"?>', '', (string) $document->saveHTML() ) );
+	// Strip the XML tag and placeholders as it's only used for the internal encoding.
+	$document_html = trim(
+		str_replace(
+			[
+				'<?xml encoding="utf-8"?>',
+				'<PreserveSelfClosingTags>',
+				'</PreserveSelfClosingTags>',
+			],
+			'',
+			(string) $document->saveHTML()
+		)
+	);
 	if ( $document_html ) {
 		$content = $document_html;
 	}
