@@ -55,6 +55,7 @@ function register_scripts(): void {
 		[],
 		filemtime( PLUGIN_DIR . '/assets/js/dist/style-integration.css' )
 	);
+	wp_style_add_data( 'required-tobii-integration', 'rtl', 'replace' );
 }
 
 

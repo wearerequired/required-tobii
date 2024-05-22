@@ -17,17 +17,6 @@ module.exports = {
 		...defaultConfig.output,
 		path: path.resolve( __dirname, 'assets/js/dist' ),
 		filename: '[name].js',
-		jsonpFunction: 'requiredTobiiWebpackJsonp',
+		uniqueName: '@wearerequired/tobii',
 	},
-
-	// https://webpack.js.org/configuration/plugins/
-	plugins: [
-		...defaultConfig.plugins.map( ( plugin ) => {
-			if ( plugin.constructor.name === 'DependencyExtractionWebpackPlugin' ) {
-				plugin.options.injectPolyfill = false;
-			}
-
-			return plugin;
-		} ),
-	],
 };
