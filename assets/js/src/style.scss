@@ -1,13 +1,22 @@
 @import "~@midzer/tobii/src/scss/tobii";
 
 :root {
-	--base-font-size: 18px;
-	--lightbox-background: rgba( 0, 0, 0, .8 );
-	--lightbox-z-index: 100000; // #wpadminbar uses 99999
+	--tobii-base-font-size: 18px;
+	--tobii-lightbox-background: rgba( 0, 0, 0, .8 );
+	--tobii-lightbox-z-index: 100000; // #wpadminbar uses 99999
+	--tobii-slide-max-height: 85vh;
+	--tobii-caption-background: rgba( 255, 255, 255, .95 );
+	--tobii-caption-color: #121212;
+}
+
+.tobii__slider {
+	top: 0;
 }
 
 .tobii__counter {
-	font-size: em( 14 );
+	font-size: .778em;
+	top: 2.2222222222em;
+	left: 1em;
 }
 
 .tobii__btn {
@@ -18,10 +27,13 @@
 	transition: none;
 	transform: none;
 	box-shadow: none;
+	width: 2.222222222em;
+	height: 2.222222222em;
 
 	svg {
-		width: em( 40 );
-		height: em( 40 );
+		transform: none;
+		height: 100%;
+		width: 100%;
 	}
 
 	@media screen and ( prefers-reduced-motion: no-preference ) {
@@ -32,7 +44,7 @@
 	&:active,
 	&:focus,
 	&:hover {
-		color: var( --button-color );
+		color: var( --tobii-button-color );
 		box-shadow: 0 0 0 1px rgba( 255, 255, 255, .5 );
 		transform: none;
 		border: 0;
@@ -45,6 +57,19 @@
 
 	&:active {
 		transform: translateY( 1px );
+	}
+
+	&--close {
+		top: .8888888889em;
+		right: .8888888889em;
+	}
+
+	&--next {
+		right: .8888888889em;
+	}
+
+	&--previous {
+		left: .8888888889em;
 	}
 
 	&--next,
@@ -65,8 +90,8 @@
 .tobii__slide {
 	figure {
 		> figcaption {
-			padding: em( 10, 14 ) em( 10, 14 );
-			font-size: em( 14 );
+			padding: .714em;
+			font-size: .778em;
 		}
 	}
 }
