@@ -5,15 +5,23 @@ on:
     branches:
       - master
 
+permissions: read-all
+
 jobs:
   auto-merge:
     name: Check and enable auto-merge
     if: ${{ github.actor == 'dependabot[bot]' }}
     runs-on: ubuntu-latest
+    timeout-minutes: 2
 
     steps:
-      - name: Enable auto-merge for dependency update
-        uses: wearerequired/auto-merge-dependency-update-action@v1
-        with:
-          github-token: ${{ secrets.PAT_WITH_REPO_SCOPE }}
-          allowed-update-types: 'devDependencies:minor, devDependencies:patch, dependencies:patch'
+      - name: Get Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@5e5f99653a5b510e8555840e80cbf1514ad4af38 # v2.1.0
+
+      - name: Enable auto-merge for minor and patch version updates
+        if: ${{ steps.metadata.outputs.update-type == 'version-update:semver-minor' || steps.metadata.outputs.update-type == 'version-update:semver-patch' }}
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GITHUB_TOKEN: ${{ secrets.REQUIRED_COM_REPO_ACCESS_PAT }}
