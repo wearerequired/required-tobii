@@ -74,7 +74,7 @@ function enable_lightbox_for_images( string $content ): string {
 	$libxml_use_internal_errors = libxml_use_internal_errors( true );
 	$document_loaded            = $document->loadHTML(
 		sprintf(
-			'<?xml encoding="utf-8"?><PreserveSelfClosingTags>%s</PreserveSelfClosingTags>',
+			'<?xml encoding="utf-8"?><preserveselfclosingtags>%s</preserveselfclosingtags>',
 			$content
 		),
 		LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD
@@ -149,8 +149,8 @@ function enable_lightbox_for_images( string $content ): string {
 		str_replace(
 			[
 				'<?xml encoding="utf-8"?>',
-				'<PreserveSelfClosingTags>',
-				'</PreserveSelfClosingTags>',
+				'<preserveselfclosingtags>',
+				'</preserveselfclosingtags>',
 			],
 			'',
 			(string) $document->saveHTML()
