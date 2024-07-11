@@ -27,7 +27,7 @@
     "@wearerequired/eslint-config": "6.0.0",
     "@wearerequired/postcss-config": "1.1.0",
     "@wearerequired/stylelint-config": "6.0.0",
-    "@wordpress/scripts": "27.9.0",
+    "@wordpress/scripts": "28.3.0",
     "prettier": "npm:wp-prettier@3.0.3"
   },
   "dependencies": {
