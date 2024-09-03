@@ -161,6 +161,15 @@ function enable_lightbox_for_images( string $content ): string {
 		$content = $document_html;
 	}
 
+	// Remove stray end tags of void elements libxml2 does not know.
+	$stray_end_tags = [
+		'</embed>',
+		'</source>',
+		'</track>',
+		'</wbr>',
+	];
+	$content        = str_replace( $stray_end_tags, '', $content );
+
 	// phpcs:enable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 
 	if ( $lightboxes > 0 && ! wp_script_is( 'required-tobii-integration' ) ) {
