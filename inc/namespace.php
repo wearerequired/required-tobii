@@ -145,13 +145,17 @@ function enable_lightbox_for_images( string $content ): string {
 		$link->setAttribute( 'data-group', $image_id );
 	}
 
-	// Strip the XML tag and placeholders as it's only used for the internal encoding.
+	// Strip XML tag, internal encoding placeholders and stray end tags of void elements unknown to libxml2.
 	$document_html = trim(
 		str_replace(
 			[
 				'<?xml encoding="utf-8"?>',
 				'<preserveselfclosingtags>',
 				'</preserveselfclosingtags>',
+				'</embed>',
+				'</source>',
+				'</track>',
+				'</wbr>',
 			],
 			'',
 			(string) $document->saveHTML()
