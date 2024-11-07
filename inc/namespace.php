@@ -145,6 +145,11 @@ function enable_lightbox_for_images( string $content ): string {
 		$link->setAttribute( 'data-group', $image_id );
 	}
 
+	// Return original content if no lightboxes were added.
+	if ( 0 === $lightboxes ) {
+		return $content;
+	}
+
 	// Strip XML tag, internal encoding placeholders and stray end tags of void elements unknown to libxml2.
 	$document_html = trim(
 		str_replace(
@@ -167,7 +172,7 @@ function enable_lightbox_for_images( string $content ): string {
 
 	// phpcs:enable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 
-	if ( $lightboxes > 0 && ! wp_script_is( 'required-tobii-integration' ) ) {
+	if ( ! wp_script_is( 'required-tobii-integration' ) ) {
 		wp_add_inline_script(
 			'required-tobii-integration',
 			sprintf(
