@@ -74,8 +74,9 @@ function enable_lightbox_for_images( string $content ): string {
 
 	$libxml_use_internal_errors = libxml_use_internal_errors( true );
 	$document_loaded            = $document->loadHTML(
+		'<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=utf-8">' .
 		sprintf(
-			'<?xml encoding="utf-8"?><preserveselfclosingtags>%s</preserveselfclosingtags>',
+			'<preserveselfclosingtags>%s</preserveselfclosingtags>',
 			$content
 		),
 		LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD
@@ -150,11 +151,12 @@ function enable_lightbox_for_images( string $content ): string {
 		return $content;
 	}
 
-	// Strip XML tag, internal encoding placeholders and stray end tags of void elements unknown to libxml2.
+	// Strip DOCTYPE, internal encoding placeholders, and stray end tags of void elements unknown to libxml2.
 	$document_html = trim(
 		str_replace(
 			[
-				'<?xml encoding="utf-8"?>',
+				'<!DOCTYPE html>',
+				'<meta http-equiv="Content-Type" content="text/html; charset=utf-8">',
 				'<preserveselfclosingtags>',
 				'</preserveselfclosingtags>',
 				'</embed>',
