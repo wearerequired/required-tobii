@@ -12,12 +12,12 @@
     }
   ],
   "require": {
-    "php": ">=7.4",
+    "php": ">=8.0",
     "wearerequired/traduttore-registry": "^2.0"
   },
   "require-dev": {
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
-    "wearerequired/coding-standards": "^2.0"
+    "wearerequired/coding-standards": "^6.0"
   },
   "extra": {
     "branch-alias": {
@@ -34,5 +34,10 @@
   "scripts": {
     "format": "vendor/bin/phpcbf --report-summary --report-source .",
     "lint": "vendor/bin/phpcs --report-summary --report-source ."
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
   }
 }
