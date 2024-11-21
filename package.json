@@ -31,7 +31,7 @@
     "prettier": "npm:wp-prettier@3.0.3"
   },
   "dependencies": {
-    "@midzer/tobii": "2.5.0"
+    "@midzer/tobii": "2.6.0"
   },
   "stylelint": {
     "extends": [
