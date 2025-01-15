@@ -200,6 +200,8 @@ function enable_lightbox_for_images( string $content ): string {
 function get_tobii_options(): array {
 	$options = [
 		'zoom'                  => false,
+		'swipeClose'            => false,
+		'draggable'             => false,
 		'navLabel'              => [
 			__( 'Previous', 'required-tobii' ),
 			__( 'Next', 'required-tobii' ),
